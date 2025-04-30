@@ -1,33 +1,57 @@
-// Copyright (c) 2025 Adrina peighambarzadeh All rights reserved
+// Copyright (c) 2025 Ain Jeong All rights reserved
 //
-// Created by: Adrina peighambarzadeh
-
+// Created by: Ain Jeong
 // Created on: Apr 2025
 // This file contains the JS functions for index.html
 /**
-* This function will tell you if you can watch the movie you want
+* This function check the type of triangle
 */
 // eslint-disable-next-line no-unused-vars
-
-function check() {
+function checkTypeOfTriangle() {
   // input
-const userAge =  parseInt(document.getElementById("user-age").value)
+  const sideA = parseFloat(document.getElementById("side-a").value)
+  const sideB = parseFloat(document.getElementById("side-b").value)
+  const sideC = parseFloat(document.getElementById("side-c").value)
 
-  // process
-if (userAge >= 17) {
-  // output
-  document.getElementById("result").innerHTML =
-    "You can see an R rated movie alone!"
-} else if (userAge >= 13) {
-  //output
-  document.getElementById("result"). innerHTML =
-    "You can see a PG-13 rated movie alone!"
-} else if (userAge >= 5) {
-  //output
-  document.getElementById("result"). innerHTML =
-    "You can see a G or PG rated movie alone!"
-} else {
-  document.getElementById("result"). innerHTML =
-    "Uh. You're too young for most things.!"
-}
+  // using the cosine law
+  const angleA =
+    Math.acos((sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)) *
+    (180 / Math.PI)
+
+  const angleB =
+    Math.acos((sideC ** 2 + sideA ** 2 - sideB ** 2) / (2 * sideC * sideA)) *
+    (180 / Math.PI)
+
+  const angleC =
+    Math.acos((sideA ** 2 + sideB ** 2 - sideC ** 2) / (2 * sideA * sideB)) *
+    (180 / Math.PI)
+
+  const sumOfAngles =
+    Number(angleA.toFixed(2)) +
+    Number(angleB.toFixed(2)) +
+    Number(angleC.toFixed(2))
+
+  if (sumOfAngles === 180) {
+    // process
+    if (sideA === sideB && sideA === sideC && sideB === sideC) {
+
+      // output
+      document.getElementById("answer").innerHTML =
+        "This is an Equilateral Triangle."
+    } else if (sideA === sideC || sideA === sideB || sideB === sideC) {
+
+      // output
+      document.getElementById("answer").innerHTML =
+        "This is an Isosceles Triangle."
+    } else {
+
+      // output
+      document.getElementById("answer").innerHTML =
+        "This is a Scalene Triangle."
+    }
+  } else {
+
+    // output
+    document.getElementById("answer").innerHTML = "This is not a triangle."
+  }
 }

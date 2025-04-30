@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Watch a Movie, in JS" />
+  <meta name="description" content="Types of triangle, in JS" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Adrina peighamabrzadeh" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <title>Watch a Movie, in JS</title>
+  <title>Types of triangle, in JS</title>
 </head>
 
 <body>
@@ -24,30 +24,46 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Watch a Movie, in JS</span>
+        <span class="mdl-layout-title">Types of triangle, in JS</span>
       </div>
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <img src="./images/movie_ratings.jpg" alt="age, with JS" />
+        <img src="./images/Screenshot 2025-04-30 12.38.48.png" alt="triangle, with JS" />
       </div>
       <br />
-      <div class="page-content">Enter in your age.</div>
+      <div class="page-content">Enter in your lengths.</div>
       <form>
+
+        <label>Side A</label>
         <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="user-age" />
-          <label class="mdl-textfield__label" for="user-age">age....</label>
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="side-a" />
+          <label class="mdl-textfield__label" for="user-age">number....</label>
+          <span class="mdl-textfield__error">Input is not a number.</span>
+        </div>
+
+        <label>Side B</label>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="side-b" />
+          <label class="mdl-textfield__label" for="user-age">number....</label>
+          <span class="mdl-textfield__error">Input is not a number.</span>
+        </div>
+
+        <label>Side C</label>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="side-c" />
+          <label class="mdl-textfield__label" for="user-age">number....</label>
           <span class="mdl-textfield__error">Input is not a number.</span>
         </div>
         <br />
         <!-- Accent-colored raised button with ripple -->
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="check()" type="button">
+          onclick="checkTypeOfTriangle()" type="button">
           Check
         </button>
         <br />
         <div class="page-content-answer">
-          <div id="result"></div>
+          <div id="answer"></div>
         </div>
     </main>
   </div>
