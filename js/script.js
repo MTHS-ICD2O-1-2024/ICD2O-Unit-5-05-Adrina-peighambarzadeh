@@ -1,6 +1,6 @@
 // Copyright (c) 2025 Ain Jeong All rights reserved
 //
-// Created by: Ain Jeong
+// Created by: Adrina peighambarzadeh
 // Created on: Apr 2025
 // This file contains the JS functions for index.html
 /**
